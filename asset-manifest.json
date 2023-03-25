@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/IronParadise/static/css/main.d6d11081.css",
+    "main.js": "/IronParadise/static/js/main.3026b64e.js",
+    "static/media/bg-gym.jpg": "/IronParadise/static/media/bg-gym.04d2d422bc80955f3225.jpg",
+    "static/media/sup3.jpeg": "/IronParadise/static/media/sup3.b8d0959874e6ba6d7622.jpeg",
+    "static/media/gym3.jpeg": "/IronParadise/static/media/gym3.17c0e10411d223766bba.jpeg",
+    "static/media/gym2.jpeg": "/IronParadise/static/media/gym2.b6d546633f17210b1dcd.jpeg",
+    "static/media/logo.png": "/IronParadise/static/media/logo.62bf66c68048dc8b6d8f.png",
+    "static/media/owner.jpeg": "/IronParadise/static/media/owner.1c787c97bd7346128a8d.jpeg",
+    "static/media/trainer.jpeg": "/IronParadise/static/media/trainer.24c3bf091d16923419fc.jpeg",
+    "static/media/gym1.jpeg": "/IronParadise/static/media/gym1.54b451f930fa96e1064f.jpeg",
+    "static/media/sup2.jpeg": "/IronParadise/static/media/sup2.353167cdf18b3d719b16.jpeg",
+    "static/media/sup1.jpeg": "/IronParadise/static/media/sup1.5ef1d339f9ea1b844a08.jpeg",
+    "index.html": "/IronParadise/index.html",
+    "main.d6d11081.css.map": "/IronParadise/static/css/main.d6d11081.css.map",
+    "main.3026b64e.js.map": "/IronParadise/static/js/main.3026b64e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d6d11081.css",
+    "static/js/main.3026b64e.js"
+  ]
+}
