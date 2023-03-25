@@ -26,6 +26,9 @@ body {
   textarea{
     resize: none !important;
   }
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
   /*
 ! tailwindcss v3.2.7 | MIT License | https://tailwindcss.com
 */

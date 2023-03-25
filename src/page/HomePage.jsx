@@ -8,6 +8,8 @@ import { FaCrown } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { useFormik } from "formik";
 import emailjs from "@emailjs/browser";
+import Images from '../Images/index'
+import { LazyLoadImage} from 'react-lazy-load-image-component';
 export const HomePage = () => {
   // ? Template
   const data = {
@@ -51,8 +53,8 @@ export const HomePage = () => {
   };
   return (
     <div className="w-screen font-[Poppins] min-h-screen bg-black text-white">
-      <img
-        src="Images/bg-gym.jpg"
+      <LazyLoadImage
+        src={Images.bg}
         className="object-cover w-screen h-screen fixed top-0"
         alt=""
       />
@@ -92,19 +94,19 @@ export const HomePage = () => {
           {/* Image Of Gym */}
           <div className="hidden lg:block">
             <div className="lg:flex gap-5">
-              <img
-                src="Images/gym2.jpeg"
+              <LazyLoadImage
+                src={Images.gym3}
                 className="object-cover w-[240px] xl:w-[290px] xl:h-[200px]"
                 alt=""
               />
-              <img
-                src="Images/gym3.jpeg"
+              <LazyLoadImage
+                src={Images.gym2}
                 className="object-cover w-[240px] xl:w-[290px] xl:h-[200px]"
                 alt=""
               />
             </div>
-            <img
-              src="Images/gym1.jpeg"
+            <LazyLoadImage
+              src={Images.gym1}
               className="object-cover w-[500px] xl:w-[600px] xl:h-[280px] mt-5"
               alt=""
             />
@@ -189,11 +191,11 @@ export const HomePage = () => {
       </div>
       <div
         ref={Contact}
-        className="w-full lg:flex justify-center gap-20 min-h-screen relative p-5 z-50"
+        className="w-full lg:flex justify-evenly min-h-screen relative p-5 z-50"
       >
         {/* Contact Section */}
         <div>
-          <h1 className="text-4xl lg:text-6xl font-extrabold font-serif strokeCustom">
+          <h1 className="text-4xl md:text-center lg:text-6xl font-extrabold font-serif strokeCustom">
             Ready To{" "}
             <span>
               Level Up
@@ -206,7 +208,7 @@ export const HomePage = () => {
           <form
             onSubmit={handleSubmit}
             ref={Form}
-            className="bg-orange-600 mt-20 md:w-4/6 mb-5 lg:mb-0 rounded-md p-2"
+            className="bg-orange-600 mt-20 md:w-4/6 mb-5 mx-auto lg:mx-0 lg:mb-0 rounded-md p-2"
           >
             <div className="relative">
               <input
@@ -261,9 +263,25 @@ export const HomePage = () => {
             </button>
           </form>
         </div>
+          <div className="md:flex gap-10 justify-center">
+            <div className="lg:pt-36 pt-5">
+              <LazyLoadImage src={Images.owner} className='w-[300px] mx-auto md:mx-0 h-[300px] rounded-t-md object-cover' alt="" />
+              <div className="bg-orange-600 p-1 rounded-b-md text-xl w-[300px] mx-auto md:mx-0 font-semibold">
+                <h1 className="underline">Owner</h1>
+                <h1>Adv.Ashish Tiwari</h1>
+              </div>
+            </div>
+            <div className="lg:pt-36 pt-5">
+              <LazyLoadImage src={Images.trainer} className='w-[300px] mx-auto md:mx-0 h-[300px] rounded-t-md object-cover' alt="" />
+              <div className="bg-orange-600 p-1 rounded-b-md text-xl w-[300px] mx-auto md:mx-0 font-semibold">
+                <h1 className="underline">Trainer</h1>
+                <h1>Alok Singh</h1>
+              </div>
+            </div>
+          </div>
         {/* Location Section */}
-        <div>
-          <h1 className="text-5xl lg:text-7xl font-extrabold text-orange-600 mb-10 underline underline-offset-4">
+        <div className="lg:hidden">
+          <h1 className="text-5xl lg:text-7xl font-extrabold text-orange-600 my-10 underline underline-offset-4">
             Location
           </h1>
           <iframe
