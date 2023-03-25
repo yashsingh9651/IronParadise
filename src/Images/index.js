@@ -5,6 +5,9 @@ const Images ={
     gym3:require('./gym3.jpeg'),
     logo:require('./logo.png'),
     owner:require('./owner.jpeg'),
-    trainer:require('./trainer.jpeg')
+    trainer:require('./trainer.jpeg'),
+    sup1:require('./sup1.jpeg'),
+    sup2:require('./sup2.jpeg'),
+    sup3:require('./sup3.jpeg')
 }
 export default Images;

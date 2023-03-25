@@ -2,10 +2,9 @@ import React, { useRef } from "react";
 import Navbar from "../components/Navbar";
 import { BsCheckCircleFill } from "react-icons/bs";
 import { ImCross } from "react-icons/im";
-import { IoFitness } from "react-icons/io5";
+import { IoFitness,IoLogoWhatsapp} from "react-icons/io5";
 import { Schema } from "../schemas";
 import { FaCrown } from "react-icons/fa";
-import { IoLogoWhatsapp } from "react-icons/io5";
 import { useFormik } from "formik";
 import emailjs from "@emailjs/browser";
 import Images from '../Images/index'
@@ -45,14 +44,18 @@ export const HomePage = () => {
   // ? Scroll Button Function
   const More = useRef();
   const Contact = useRef();
+  const Supp = useRef();
   const handleContact = () => {
     Contact.current.scrollIntoView({ behavior: "smooth" });
   };
   const handleMore = () => {
     More.current.scrollIntoView({ behavior: "smooth" });
   };
+  const handleSupp = () => {
+    Supp.current.scrollIntoView({ behavior: "smooth" });
+  };
   return (
-    <div className="w-screen font-[Poppins] min-h-screen bg-black text-white">
+    <div className="w-screen font-[Poppins] text-white">
       <LazyLoadImage
         src={Images.bg}
         className="object-cover w-screen h-screen fixed top-0"
@@ -64,7 +67,7 @@ export const HomePage = () => {
         <h1 className="uppercase text-4xl lg:text-7xl font-black lg:w-4/6 mt-40 mx-3 lg:mx-10 font-[Oswald]">
           it's all about what you can achieve
         </h1>
-        <h1 className="mx-3 lg:mx-10 my-14 text-2xl">
+        <h1 className="mx-3 lg:mx-10 my-10 text-2xl">
           Empower yourself to make the changes you need to make.
         </h1>
         <button
@@ -79,10 +82,11 @@ export const HomePage = () => {
         >
           Contact Us
         </button>
-        <button>
-          <a href="https://wa.me/c/919125225055" target={"_blank"}>
-            <IoLogoWhatsapp className="text-4xl lg:text-3xl"/>
-          </a>
+        <button
+          onClick={handleSupp}
+          className="mx-3 bg-orange-600 outline-none p-2 rounded mt-5 text-xl lg:text-lg hover:bg-orange-700"
+        >
+          Supplements
         </button>
       </div>
       {/* View More */}
@@ -90,24 +94,23 @@ export const HomePage = () => {
         <h1 className="text-3xl lg:text-5xl text-center pt-10 font-extrabold font-serif strokeCustom">
           Ready To Start <span>Your Journey</span> Now With Us
         </h1>
-        <div className="lg:flex w-full h-4/5 justify-start p-10 gap-5 xl:gap-10 items-center">
-          {/* Image Of Gym */}
-          <div className="hidden lg:block">
-            <div className="lg:flex gap-5">
+        <div className="lg:flex w-full h-4/5 justify-start p-2 md:p-10 gap-5 xl:gap-10 items-center">
+          <div className="m-auto w-[340px] lg:w-[600px]">
+            <div className="flex gap-3 lg:gap-5">
               <LazyLoadImage
                 src={Images.gym3}
-                className="object-cover w-[240px] xl:w-[290px] xl:h-[200px]"
+                className="object-cover w-[160px] h-[160px] xl:w-[290px] xl:h-[200px]"
                 alt=""
               />
               <LazyLoadImage
                 src={Images.gym2}
-                className="object-cover w-[240px] xl:w-[290px] xl:h-[200px]"
+                className="object-cover w-[160px] h-[160px] xl:w-[290px] xl:h-[200px]"
                 alt=""
               />
             </div>
             <LazyLoadImage
               src={Images.gym1}
-              className="object-cover w-[500px] xl:w-[600px] xl:h-[280px] mt-5"
+              className="object-cover w-[332px] h-[200px] mb-2 md:mb-0 xl:w-[600px] xl:h-[280px] mt-5"
               alt=""
             />
           </div>
@@ -266,33 +269,56 @@ export const HomePage = () => {
           <div className="md:flex gap-10 justify-center">
             <div className="lg:pt-36 pt-5">
               <LazyLoadImage src={Images.owner} className='w-[300px] mx-auto md:mx-0 h-[300px] rounded-t-md object-cover' alt="" />
-              <div className="bg-orange-600 p-1 rounded-b-md text-xl w-[300px] mx-auto md:mx-0 font-semibold">
-                <h1 className="underline">Owner</h1>
+              <div className="bg-orange-600 p-1 rounded-b-md w-[300px] mx-auto md:mx-0 font-semibold">
+                <h1 className="underline text-lg">Owner</h1>
                 <h1>Adv.Ashish Tiwari</h1>
+                <div className="flex justify-between items-center">
+                  <h1>No.- 9125225055</h1>
+                  <a href="https://wa.me/c/919125225055"><IoLogoWhatsapp/></a>
+                </div>
               </div>
             </div>
             <div className="lg:pt-36 pt-5">
               <LazyLoadImage src={Images.trainer} className='w-[300px] mx-auto md:mx-0 h-[300px] rounded-t-md object-cover' alt="" />
-              <div className="bg-orange-600 p-1 rounded-b-md text-xl w-[300px] mx-auto md:mx-0 font-semibold">
-                <h1 className="underline">Trainer</h1>
+              <div className="bg-orange-600 p-1 rounded-b-md w-[300px] mx-auto md:mx-0 font-semibold">
+                <h1 className="underline text-lg">Trainer</h1>
                 <h1>Alok Singh</h1>
+                <div className="flex justify-between items-center">
+                  <h1>No.- 6386357523</h1>
+                  <a href="https://wa.me/qr/NUAVVE27J5MPL1"><IoLogoWhatsapp/></a>
+                </div>
               </div>
             </div>
           </div>
-        {/* Location Section */}
-        <div className="lg:hidden">
-          <h1 className="text-5xl lg:text-7xl font-extrabold text-orange-600 my-10 underline underline-offset-4">
-            Location
-          </h1>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.594221894443!2d80.9167993!3d25.2169033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3984af150e00f643%3A0x2de3f16cbe2ed99a!2sIRON%20PARADISE%20GYM!5e0!3m2!1sen!2sin!4v1679719229060!5m2!1sen!2sin"
-            className="rounded w-full h-48 lg:w-[600px] md:h-[500px]"
-            allowFullScreen=""
-            without rel="noreferrer"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
+      </div>
+      {/* Supplement Section */}
+      <div ref={Supp} className="w-full h-screen relative z-50 p-3">
+        <div className="m-auto w-[340px] lg:w-4/5">
+        <h1 className="my-10 uppercase text-3xl lg:text-4xl font-bold">fuel your fitness to its fullest potential</h1>
+            <div className="flex gap-3 lg:gap-5">
+              <LazyLoadImage
+                src={Images.sup1}
+                className="object-cover w-[160px] h-[160px] xl:w-[290px] xl:h-[200px]"
+                alt=""
+              />
+              <LazyLoadImage
+                src={Images.sup2}
+                className="object-cover w-[160px] h-[160px] xl:w-[290px] xl:h-[200px]"
+                alt=""
+              />
+            </div>
+            <LazyLoadImage
+              src={Images.sup3}
+              className="object-cover w-[332px] h-[200px] mb-2 md:mb-0 xl:w-[600px] xl:h-[280px] mt-5"
+              alt=""
+            />
+          <button
+          onClick={handleContact}
+          className="bg-orange-600 outline-none p-2 rounded mt-5 text-xl lg:text-lg hover:bg-orange-700"
+        >
+          Contact Us
+        </button>
+          </div>
       </div>
     </div>
   );
